@@ -1,3 +1,4 @@
+
 <html lang="en">
   <head>
     <link
@@ -45,32 +46,34 @@
           <h2 style="color: ;green">Edit product</h2>
           <form action="/edit" method="post">
 
+          <div class="form-group" style="margin-left: 10px">
+
             <input type="hidden" name="id" value="{{product._id}}" />
-            Product Name
-            <br />
-            <input type="text" name="txtName" value="{{product.name}}" />
-            <br />
-            <br />
-            Price
-            <br />
-            <input type="text" name="txtPrice" value="{{product.price}}" />
-            <br />
-            <br />
-            Picture URL
-            <br />
-            <input type="text" name="txtPic" value="{{product.picture}}" />
-            <br />
-            <br />
-            Amount
-            <br />
-            <input type="text" name="txtAmount" value="{{product.amount}}" />
-            <br />
+            {{!-- Product Name --}}
+            {{!-- <br /> --}}
+            {{!-- <input type="text" name="txtName" value="{{product.name}}" /> --}}
+            {{!-- <br /> --}}
+            {{!-- <br /> --}}
+            <label style="color: rgb(144, 145, 82); font-size: 20px" for="Name" class="font-weight-bold">Name</label>
+            <input type="text" class="form-control" id="name" name="txtName" value="{{product.name}}" minlength="3" maxlength="100" required />
+
+            <label style="color:rgb(144, 145, 82); font-size: 20px" for="Price" class="font-weight-bold">Price</label>
+            <input type="number" class="form-control" id="Price" name="txtPrice" value="{{product.price}}" required />
+
+            <label style="color: rgb(144, 145, 82); font-size: 20px" for="Picture URL" class="font-weight-bold">Picture
+            URL</label>
+            <input type="text" class="form-control" id="Picture" name="txtPic" value="{{product.pictureURL}}" required />
+
+            <label style="color: rgb(144, 145, 82); font-size: 20px" for="Amount"
+            class="font-weight-bold">Amount</label>
+            <input type="number" class="form-control" id="Amount" name="txtAmount" value="{{product.amount}}" required/>
             <br />
             <input
               type="submit"
               value="Update Product"
               style="color: rgb(98, 167, 20);"
             />
+            </div>
           </form>
 
         </div>

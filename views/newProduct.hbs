@@ -1,84 +1,60 @@
 <html lang="en">
 
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-    ></script>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TOYS MANAGERMENT</title>
-    <style>
-      #li1 { font-size: larger; }
-    </style>
-  </head>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOYS MANAGERMENT</title>
+  <style>
+    #li1 {
+      font-size: larger;
+    }
+  </style>
+</head>
 
-  <body>
-    <div class="container-fluid p-5 bg-warning text-white text-center">
-      <h1>ATN'S TOY STORE</h1>
-    </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-1">
-          <ul class="nav">
-            <li id="li1"><a
-                href="/"
-                class="list-group-item list-group-item-action list-group-item-danger"
-              >Home</a></li>
-            <li id="li1"><a
-                href="/new"
-                class="list-group-item list-group-item-action"
-              >New Toys</a></li>
-            <li id="li1"><a
-                href="/view"
-                class="list-group-item list-group-item-action list-group-item-danger"
-              >All Toys</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-9">
-          <h2>ADD NEW TOYS</h2>
-          <form action="/new" method="post">
-            Name 
+<body>
+  <div class="container-fluid p-5 bg-warning text-white text-center">
+    <h1>ATN'S TOY STORE</h1>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-1">
+        <ul class="nav">
+          <li id="li1"><a href="/" class="list-group-item list-group-item-action list-group-item-danger">Home</a></li>
+          <li id="li1"><a href="/new" class="list-group-item list-group-item-action">New Toys</a></li>
+          <li id="li1"><a href="/view" class="list-group-item list-group-item-action list-group-item-danger">All
+              Toys</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-9">
+        <h2>ADD NEW TOYS</h2>
+        <form action="/new" method="post">
+          <br />
+          <div class="form-group" style="margin-left: 10px">
+            <label style="color: rgb(144, 145, 82); font-size: 20px" for="Name" class="font-weight-bold">Name</label>
+            <input type="text" class="form-control" id="name" name="txtName" minlength="3" maxlength="100" required />
+            <label style="color:rgb(144, 145, 82); font-size: 20px" for="Price" class="font-weight-bold">Price</label>
+            <input type="number" class="form-control" id="Price" name="txtPrice" required />
+            <label style="color: rgb(144, 145, 82); font-size: 20px" for="Picture URL" class="font-weight-bold">Picture
+              URL</label>
+            <input type="text" class="form-control" id="Picture" name="txtPic" required />
+            <label style="color: rgb(144, 145, 82); font-size: 20px" for="Amount"
+              class="font-weight-bold">Amount</label>
+            <input type="number" class="form-control" id="Amount" name="txtAmount" required/>
             <br />
-            <input type="text" name="txtName" />
-            <br />
-            <br />
-            Price
-            <br />
-            <input type="text" name="txtPrice" />
-            <br />
-            <br />
-            Picture URL
-            <br />
-            <input type="text" name="txtPic" />
-            <br />
-            <br />
-            Amount
-            <br />
-            <input type="text" name="txtAmount" />
-            <br />
-            <br />
-            <input
-              type="submit"
-              value="Create"
-              style="background-color: rgb(231, 139, 224);"
-            />
-          </form>
+            <button onclick="myFunction() " style="color: rgb(144, 145, 82); font-size: 15px">Add Now</button>
+            {{!-- <script>
+              function myFunction() { alert("Complete!"); }
+            </script> --}}
 
-        </div>
+        </form>
+
       </div>
     </div>
-
-    {{! <footer> }}
-    {{! <p style="text-align: center; background-color:rgb(169, 170, 170) ">copy right: Flowerf</p> }}
-    {{! </footer> }}
-  </body>
+  </div>
+</body>
 
 </html>
