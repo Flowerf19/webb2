@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOYS MANAGERMENT</title>
+    <style>
+        #li1 {
+            font-size: larger;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid p-5 bg-primary text-white text-center">
+        <h1>ATN'S TOY STORE</h1>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-1">
+                <ul class="nav">
+                    <li id="li1"><a href="/"
+                            class="list-group-item list-group-item-action list-group-item-danger">Home</a></li>
+                    <li id="li1"><a href="/new" class="list-group-item list-group-item-action">New Toys</a></li>
+                    <li id="li1"><a href="/view"
+                            class="list-group-item list-group-item-action list-group-item-danger">All Toys</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <h1>ALL TOYS</h1>
+                <form action="/search" method="post">
+                <br />
+                    Search by Name:
+                    <br />
+                    <input type="text" name="search">
+                    <input type="submit" value="Search">
+                </form>
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Picture</th>
+                            <th>Price</th>
+                            <th>Amount</th>
+                            <th>Delete</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {{#each results}}
+                        <tr>
+                            <td>{{name}}</td>
+                            <td><img src="{{pictureURL}}" width="150" height="100"></td>
+                            <td>{{price}}</td>
+                            <td>{{amount}}</td>
+                            <td><a href="/delete?id={{_id}}" onclick="return confirm('Are you sure?')">Delete</a></td>
+                            <td><a href="/Edit?id={{_id}}">Edit</a></td>
+
+                        </tr>
+                        {{/each}}
+                    </tbody>
+
+            </div>
+        </div>
+    </div>
+
+
+    {{!-- <footer> --}}
+        {{!-- <p style="text-align: center; background-color:rgb(169, 170, 170) ">copy right: Flowerf</p> --}}
+        {{!-- </footer> --}}
+</body>
+
+</html>
