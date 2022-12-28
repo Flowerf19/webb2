@@ -60,7 +60,7 @@ app.post("/new", async (req, res) => {
   }
     let newId = await insertProduct(newProduct);
     console.log(newId.insertedId);
-    res.render("home");
+    res.render("/view");
 });
 // put patch
 app.get("/new", (req, res) => {
